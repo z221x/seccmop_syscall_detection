@@ -107,6 +107,18 @@ void interact(int32_t fd)
                 }
             }
         }
+        if (strncmp(message.c_str(), "help", 4) == 0)
+        {
+            std::cout << "支持的命令:\n"
+                      << "add <num>     : 添加要监控的syscall号\n"
+                      << "del <num>     : 删除已监控的syscall号\n"
+                      << "intercept <num> : 拦截指定syscall号\n"
+                      << "show         : 显示已捕获的syscall号队列\n"
+                      << "list         : 显示当前过滤的syscall号列表\n"
+                      << "clear        : 清空syscall队列\n"
+                      << "exit         : 断开连接并退出\n"
+                      << "help         : 显示本帮助信息\n";
+        }
     }
     close(fd);
 }
