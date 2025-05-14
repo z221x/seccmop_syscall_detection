@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.14)
+project(detection_client)
+
+# Add source files
+set(SOURCE_FILES
+    detection_client.cpp
+)
+
+# Add shared library
+add_executable(detection_client ${SOURCE_FILES})
